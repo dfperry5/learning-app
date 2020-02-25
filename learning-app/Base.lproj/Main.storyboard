@@ -177,16 +177,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="jXE-pi-cwO">
-                                        <rect key="frame" x="71" y="194" width="138" height="20.5"/>
+                                        <rect key="frame" x="122.5" y="194" width="35" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuU-UW-VSh">
-                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLQ-df-rBk">
-                                                <rect key="frame" x="98.5" y="0.0" width="39.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLQ-df-rBk">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -352,7 +346,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O3S-pc-aO9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Topic Page" id="z4X-M6-CUd"/>
+                    <navigationItem key="navigationItem" title="Topic Page" id="z4X-M6-CUd">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="Jn9-r5-nzm"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="topicDescriptionLabel" destination="knW-Lr-QzO" id="HLd-yG-GIP"/>
                         <outlet property="topicEventsHeadingLabel" destination="TGq-h2-pvr" id="McD-L4-ADy"/>
@@ -393,7 +389,6 @@
     </scenes>
     <resources>
         <image name="Apple_gray_logo" width="2000" height="2000"/>
-        <image name="homer-simpson" width="256" height="320"/>
         <image name="homer-simpson" width="112" height="168"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
         <image name="trash" catalog="system" width="60" height="64"/>

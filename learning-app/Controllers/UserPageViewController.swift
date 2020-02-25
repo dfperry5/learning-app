@@ -22,7 +22,7 @@ class UserPageViewController: UIViewController {
     
     @IBOutlet weak var userLikedTopicsTable: UITableView!
     
-    let exampleUser = UserModel(email: "homer@gmail.com", name: "Homer Simpson", picture: "homer-simpson", goal: "Learn iOS.", likedTopics: ["iOS"])
+    let exampleUser = UserModel(email: "homer@gmail.com", name: "Homer Simpson", picture: "homer-simpson", goal: "Goal: Learn iOS by participating in a hackathon", likedTopics: ["iOS","Android"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
