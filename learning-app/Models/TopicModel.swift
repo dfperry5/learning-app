@@ -14,5 +14,5 @@ struct TopicModel {
     var description: String
     var links: [String]
     var people: [String]
-    var events: [Any]
+    var events: [EventModel]
 }
