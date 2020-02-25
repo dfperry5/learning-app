@@ -15,6 +15,8 @@ class SwipePageViewController: UIViewController {
     @IBOutlet var swipeUpGestureRecognizer: UISwipeGestureRecognizer!
 
     var topicIndex: Int = 0;
+    
+    var exampleUser = UserModel(email: "homer@gmail.com", name: "Homer Simpson", picture: "homer-simpson", goal: "Goal: Learn iOS by participating in a hackathon", likedTopics: [])
         
     let allTopics: [TopicModel] = [
         TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: []),
@@ -39,6 +41,7 @@ class SwipePageViewController: UIViewController {
     }
     
     @IBAction func onSwipeRightAction(_ sender: UISwipeGestureRecognizer) {
+        exampleUser.likedTopics.append(allTopics[topicIndex].name)
         nextTopic()
     }
     
@@ -47,7 +50,9 @@ class SwipePageViewController: UIViewController {
     }
     
     @IBAction func onRightButtonClick(_ sender: UIButton) {
+        exampleUser.likedTopics.append(allTopics[topicIndex].name)
         nextTopic()
+        
     }
     
     public func nextTopic() {
@@ -55,4 +60,17 @@ class SwipePageViewController: UIViewController {
         topicLabelField.text = allTopics[topicIndex].name;
         topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? UserPageViewController {
+            nextVC.user = exampleUser
+        }
+    }
+    
+    @IBAction func profileButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: Constants.SWIPE_PAGE_TO_USER_PAGE_SEGUE, sender: self)
+    }
+    
+    
+    
 }

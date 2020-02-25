@@ -25,6 +25,8 @@ class TopicPageViewController: UIViewController {
         print("Hello")
     }
     
+    var passedInTopic: String?
+    
     let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["www.apple.com","www.google.com"], people: [], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: [])])
     
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class TopicPageViewController: UIViewController {
         topicNameLabel.text = sampleTopic.name
         topicImageView.image = UIImage(named: sampleTopic.picture)
         topicDescriptionLabel.text = sampleTopic.description
+        print(passedInTopic)
         
         // RESOURCES
         
