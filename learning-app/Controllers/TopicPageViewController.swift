@@ -10,26 +10,26 @@ import UIKit
 
 class TopicPageViewController: UIViewController {
 
+    // HEADING OUTLETS
     @IBOutlet weak var topicNameLabel: UILabel!
     @IBOutlet weak var topicImageView: UIImageView!
     @IBOutlet weak var topicDescriptionLabel: UILabel!
     
+    // RESOURCE OUTLETS
     @IBOutlet weak var topicResourcesLabel: UILabel!
-    
     @IBOutlet weak var topicResourcesLinksButton: UIButton!
+    
+    // INTEREST OUTLET
     @IBOutlet weak var topicInterestLabel: UILabel!
     
+    // EVENTS OUTLETS
     @IBOutlet weak var topicEventsHeadingLabel: UILabel!
+    @IBOutlet weak var topicEventsLabel: UILabel!
     
-    @IBAction func tapTopicResourcesLinkButton(_ sender: UIButton) {
-        print("Hello")
-    }
-    
-    let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["www.apple.com","www.google.com"], people: [], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: [])])
+    let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["http://www.apple.com"], people: ["Beth","Kelsey","Dylan","Priya","Chris","Paul","Devon"], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: []), EventModel(name: "AWS", date: Date(), location: "NMW Apex 1", description: "Learn AWS from ECS experts on the topic", links: [])])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // HEADING
         topicNameLabel.text = sampleTopic.name
@@ -37,6 +37,7 @@ class TopicPageViewController: UIViewController {
         topicDescriptionLabel.text = sampleTopic.description
         
         // RESOURCES
+        topicResourcesLinksButton.setTitle(sampleTopic.links[0], for: .normal)
         
 //        let resourceLinks = NSMutableAttributedString()
 //        let newline = NSMutableAttributedString(string: "\n")
@@ -66,17 +67,23 @@ class TopicPageViewController: UIViewController {
         
         // RELATED EVENTS
         let events = sampleTopic.events
-        let eventsText: String
+        var allEvents = String()
         for event in events {
-            
+            let eventString = event.name + " on 2/25/2020 in " + event.location + ": " + event.description + "\n\n"
+            allEvents = allEvents + eventString
+        }
+        
+        topicEventsLabel.text = allEvents
+        topicEventsLabel.sizeToFit()
+        
+    }
+    
+    // RESOURCE BUTTONS
+    @IBAction func tapTopicResourcesLinkButton(_ sender: UIButton) {
+        let url = URL(string: sampleTopic.links[0])
+        if let url = NSURL(string: sampleTopic.links[0]){
+            UIApplication.shared.openURL(url as URL)
         }
     }
-    
-   
-    
-    @IBAction func tapTopicResourceLinksLabel(_ sender: UITapGestureRecognizer) {
-        print("Hello")
-    }
-    
     
 }
