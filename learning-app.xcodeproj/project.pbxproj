@@ -18,6 +18,7 @@
 		790A838E2405717600C8E3F9 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A838D2405717600C8E3F9 /* SwipePageViewController.swift */; };
 		790A83902405718600C8E3F9 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A838F2405718600C8E3F9 /* UserPageViewController.swift */; };
 		792ACBB124058148004810FB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792ACBB024058148004810FB /* UserModel.swift */; };
+		7B3620432405A0ED0002B8CE /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3620422405A0ED0002B8CE /* EventModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		790A838D2405717600C8E3F9 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
 		790A838F2405718600C8E3F9 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		792ACBB024058148004810FB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7B3620422405A0ED0002B8CE /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				790A8386240569A100C8E3F9 /* TopicModel.swift */,
 				792ACBB024058148004810FB /* UserModel.swift */,
+				7B3620422405A0ED0002B8CE /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				790A8376240558FB00C8E3F9 /* ViewController.swift in Sources */,
+				7B3620432405A0ED0002B8CE /* EventModel.swift in Sources */,
 				790A838C2405716700C8E3F9 /* TopicPageViewController.swift in Sources */,
 				792ACBB124058148004810FB /* UserModel.swift in Sources */,
 				790A8372240558FB00C8E3F9 /* AppDelegate.swift in Sources */,
