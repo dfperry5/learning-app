@@ -13,6 +13,10 @@
 		790A8379240558FB00C8E3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790A8377240558FB00C8E3F9 /* Main.storyboard */; };
 		790A837B240558FD00C8E3F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790A837A240558FD00C8E3F9 /* Assets.xcassets */; };
 		790A837E240558FD00C8E3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790A837C240558FD00C8E3F9 /* LaunchScreen.storyboard */; };
+		790A8387240569A100C8E3F9 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A8386240569A100C8E3F9 /* TopicModel.swift */; };
+		790A838C2405716700C8E3F9 /* TopicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A838B2405716700C8E3F9 /* TopicPageViewController.swift */; };
+		790A838E2405717600C8E3F9 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A838D2405717600C8E3F9 /* SwipePageViewController.swift */; };
+		790A83902405718600C8E3F9 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A838F2405718600C8E3F9 /* UserPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		790A837A240558FD00C8E3F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		790A837D240558FD00C8E3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		790A837F240558FD00C8E3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		790A8386240569A100C8E3F9 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
+		790A838B2405716700C8E3F9 /* TopicPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicPageViewController.swift; sourceTree = "<group>"; };
+		790A838D2405717600C8E3F9 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
+		790A838F2405718600C8E3F9 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		790A8370240558FB00C8E3F9 /* learning-app */ = {
 			isa = PBXGroup;
 			children = (
+				790A83852405698D00C8E3F9 /* Models */,
 				790A8371240558FB00C8E3F9 /* AppDelegate.swift */,
 				790A8373240558FB00C8E3F9 /* SceneDelegate.swift */,
-				790A8375240558FB00C8E3F9 /* ViewController.swift */,
+				790A83882405710E00C8E3F9 /* Controllers */,
 				790A8377240558FB00C8E3F9 /* Main.storyboard */,
 				790A837A240558FD00C8E3F9 /* Assets.xcassets */,
 				790A837C240558FD00C8E3F9 /* LaunchScreen.storyboard */,
 				790A837F240558FD00C8E3F9 /* Info.plist */,
 			);
 			path = "learning-app";
+			sourceTree = "<group>";
+		};
+		790A83852405698D00C8E3F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				790A8386240569A100C8E3F9 /* TopicModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		790A83882405710E00C8E3F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				790A8375240558FB00C8E3F9 /* ViewController.swift */,
+				790A838B2405716700C8E3F9 /* TopicPageViewController.swift */,
+				790A838D2405717600C8E3F9 /* SwipePageViewController.swift */,
+				790A838F2405718600C8E3F9 /* UserPageViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				790A8376240558FB00C8E3F9 /* ViewController.swift in Sources */,
+				790A838C2405716700C8E3F9 /* TopicPageViewController.swift in Sources */,
 				790A8372240558FB00C8E3F9 /* AppDelegate.swift in Sources */,
 				790A8374240558FB00C8E3F9 /* SceneDelegate.swift in Sources */,
+				790A838E2405717600C8E3F9 /* SwipePageViewController.swift in Sources */,
+				790A8387240569A100C8E3F9 /* TopicModel.swift in Sources */,
+				790A83902405718600C8E3F9 /* UserPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

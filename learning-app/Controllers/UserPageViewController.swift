@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UserPageViewController.swift
 //  learning-app
 //
 //  Created by Dylan Perry on 2/25/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserPageViewController: UIViewController {
 
+    let firstTopic = TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "The dopest logo", links: ["www.apple.com"], people: ["Yooo"], events: [1])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-

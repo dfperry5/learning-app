@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HTj-pp-Wo9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hSm-Au-LuE">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="8VG-Nx-iVH" customClass="ViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8Z-w9-h2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="nci-5L-JoX">
+                                <rect key="frame" x="167" y="382" width="80" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glR-Ce-Pwk">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="User Page"/>
+                                        <connections>
+                                            <action selector="userPageButtonClicked:" destination="8VG-Nx-iVH" eventType="touchUpInside" id="OU4-Ti-a2T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-20-vVg">
+                                        <rect key="frame" x="0.0" y="51" width="80" height="30"/>
+                                        <state key="normal" title="Swipe Page"/>
+                                        <connections>
+                                            <action selector="swipePageButtonClicked:" destination="8VG-Nx-iVH" eventType="touchUpInside" id="TK7-2A-VDM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-Pc-pV4">
+                                        <rect key="frame" x="0.0" y="102" width="80" height="30"/>
+                                        <state key="normal" title="Topic Page"/>
+                                        <connections>
+                                            <action selector="topicPageButtonClicked:" destination="8VG-Nx-iVH" eventType="touchUpInside" id="xlb-OX-K33"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nci-5L-JoX" firstAttribute="centerX" secondItem="5m3-oX-Anv" secondAttribute="centerX" id="c1b-TJ-F9b"/>
+                            <constraint firstItem="nci-5L-JoX" firstAttribute="centerY" secondItem="5m3-oX-Anv" secondAttribute="centerY" id="u04-jC-imn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5m3-oX-Anv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J9U-rX-Hfi"/>
+                    <connections>
+                        <segue destination="vbx-Kp-1U9" kind="show" identifier="ToSwipePage" id="HVb-oW-8E9"/>
+                        <segue destination="Upt-gz-jEC" kind="show" identifier="ToTopicPage" id="4GK-g3-cho"/>
+                        <segue destination="6do-NF-aXe" kind="show" identifier="ToUserPage" id="wse-Y8-Ym3"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ht5-v6-N9W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-81.159420289855078" y="-52.232142857142854"/>
+        </scene>
+        <!--Swipe Page-->
+        <scene sceneID="NDA-UA-4LK">
+            <objects>
+                <viewController title="Swipe Page" id="vbx-Kp-1U9" customClass="SwipePageViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D2X-oo-xrI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0SK-kT-WNb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Swipe Page" id="Sqf-cZ-AN7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgw-9K-tLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521.7391304347827" y="97.767857142857139"/>
+        </scene>
+        <!--User Page-->
+        <scene sceneID="5Yc-ZL-u1J">
+            <objects>
+                <viewController title="User Page" id="6do-NF-aXe" customClass="UserPageViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTc-r6-Ddg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EE8-bT-fvn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Page" id="tcy-5o-4Gi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45r-q9-aBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="-864"/>
+        </scene>
+        <!--Topic Page-->
+        <scene sceneID="DAl-fp-7Y2">
+            <objects>
+                <viewController title="Topic Page" id="Upt-gz-jEC" customClass="TopicPageViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BHX-ny-9Hi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O3S-pc-aO9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Topic Page" id="z4X-M6-CUd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7r-kJ-3nu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="919"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jFf-ND-82Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTj-pp-Wo9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7YH-vH-ZG3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8VG-Nx-iVH" kind="relationship" relationship="rootViewController" id="ASI-2l-PsB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fk-4v-1dO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1065" y="-52"/>
         </scene>
     </scenes>
 </document>
