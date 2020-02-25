@@ -10,10 +10,21 @@ import UIKit
 
 class UserPageViewController: UIViewController {
 
-    let firstTopic = TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "The dopest logo", links: ["www.apple.com"], people: ["Yooo"], events: [1])
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var Picture: UIImageView!
+    
+    
+    let exampleUser = UserModel(email: "priya@gmail.com", name: "Test Name", picture: "homer-simpson", goal: "Learn iOS today", likedTopics: ["iOS"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        userNameLabel.text = exampleUser.name
+        Picture.image = UIImage(named: exampleUser.picture)
     }
+    
+    
+
+
 }
