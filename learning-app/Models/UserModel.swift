@@ -14,5 +14,4 @@ struct UserModel {
     var picture: String
     var goal: String
     var likedTopics: [String]
-    
 }
