@@ -53,6 +53,7 @@ class UserPageViewController: UIViewController {
 extension UserPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let exampleUser = user {
+            //print(exampleUser.likedTopics.count)
             return exampleUser.likedTopics.count
         }
         return 0
@@ -62,6 +63,8 @@ extension UserPageViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
         if let exampleUser = user {
+            //print(indexPath.item)
+            //print(exampleUser.likedTopics[indexPath.item])
             cell.textLabel?.text = exampleUser.likedTopics[indexPath.item]
         }
        
@@ -72,8 +75,8 @@ extension UserPageViewController: UITableViewDataSource {
 extension UserPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let exampleUser = user {
-            print(indexPath.item)
-            print(exampleUser.likedTopics[indexPath.item])
+            //print(indexPath.item)
+            //print(exampleUser.likedTopics[indexPath.item])
             selectedTopic = exampleUser.likedTopics[indexPath.item]
             performSegue(withIdentifier: Constants.USER_PAGE_TO_TOPIC_PAGE_SEGUE, sender: self)
         }

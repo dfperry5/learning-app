@@ -29,14 +29,30 @@ class TopicPageViewController: UIViewController {
     
     let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["www.apple.com","www.google.com"], people: [], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: [])])
     
+    let allTopics: [TopicModel] = [
+        TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: []),
+        TopicModel(name: "AWS", picture: "aws_logo", description: "Learn all about AWS in this education module, offered through Amazon.", links: ["https://aws.amazon.com/training/"], people: ["Ma"], events: []),
+        TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Ta"], events: []),
+         TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: ["la"], events: [])
+    ];
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         // HEADING
-        topicNameLabel.text = sampleTopic.name
-        topicImageView.image = UIImage(named: sampleTopic.picture)
-        topicDescriptionLabel.text = sampleTopic.description
+        if let topic = passedInTopic {
+//            topicNameLabel.text = allTopics.sampleTopic.name
+//            topicImageView.image = UIImage(named: sampleTopic.picture)
+//            topicDescriptionLabel.text = sampleTopic.description
+            for (i, element) in allTopics.enumerated() {
+                if (allTopics[i].name == topic) {
+                    topicNameLabel.text = allTopics[i].name
+                    topicImageView.image = UIImage(named: allTopics[i].picture)
+                    topicDescriptionLabel.text = allTopics[i].description
+                }
+            }
+        }
+        
         print(passedInTopic)
         
         // RESOURCES

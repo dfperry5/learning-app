@@ -21,7 +21,8 @@ class SwipePageViewController: UIViewController {
     let allTopics: [TopicModel] = [
         TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: []),
         TopicModel(name: "AWS", picture: "aws_logo", description: "Learn all about AWS in this education module, offered through Amazon.", links: ["https://aws.amazon.com/training/"], people: ["Ma"], events: []),
-        TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Ta"], events: [])
+        TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Ta"], events: []),
+         TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: ["la"], events: [])
     ];
     
     override func viewDidLoad() {
@@ -42,6 +43,8 @@ class SwipePageViewController: UIViewController {
     
     @IBAction func onSwipeRightAction(_ sender: UISwipeGestureRecognizer) {
         exampleUser.likedTopics.append(allTopics[topicIndex].name)
+        print(exampleUser.likedTopics.count)
+
         nextTopic()
     }
     
@@ -51,6 +54,8 @@ class SwipePageViewController: UIViewController {
     
     @IBAction func onRightButtonClick(_ sender: UIButton) {
         exampleUser.likedTopics.append(allTopics[topicIndex].name)
+        print(exampleUser.likedTopics.count)
+
         nextTopic()
         
     }
