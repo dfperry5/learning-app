@@ -22,8 +22,10 @@ class SwipePageViewController: UIViewController {
         TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: []),
         TopicModel(name: "AWS", picture: "aws_logo", description: "Learn all about AWS in this education module, offered through Amazon.", links: ["https://aws.amazon.com/training/"], people: ["Ma"], events: []),
         TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Ta"], events: []),
-         TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: ["la"], events: [])
+        TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: ["la"], events: [])
     ];
+    
+    let defaultTopic: TopicModel = TopicModel(name: "You nailed it!", picture: "homer-simpson", description: "", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +63,20 @@ class SwipePageViewController: UIViewController {
     }
     
     public func nextTopic() {
-        topicIndex = (topicIndex + 1) % allTopics.count
-        topicLabelField.text = allTopics[topicIndex].name;
-        topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
+        repeat {
+            topicIndex = (topicIndex + 1) % allTopics.count
+            if (!exampleUser.likedTopics.contains(allTopics[topicIndex].name)) {
+                topicLabelField.text = allTopics[topicIndex].name
+                topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
+                break;
+            }
+        } while (exampleUser.likedTopics.count < allTopics.count)
+        
+        if (exampleUser.likedTopics.count == allTopics.count)
+        {
+            topicLabelField.text = defaultTopic.name
+            topicImageView.image = UIImage(named: defaultTopic.picture)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
