@@ -15,7 +15,7 @@ class SwipePageViewController: UIViewController {
     @IBOutlet var swipeUpGestureRecognizer: UISwipeGestureRecognizer!
     //MARK: Actions
     
-    let firstTopic = TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "The dopest logo", links: ["www.apple.com"], people: ["Yooo"], events: [1])
+    let firstTopic = TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "The dopest logo", links: ["www.apple.com"], people: ["Yooo"], events: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
