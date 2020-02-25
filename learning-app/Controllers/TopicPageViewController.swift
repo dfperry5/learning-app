@@ -26,10 +26,6 @@ class TopicPageViewController: UIViewController {
     @IBOutlet weak var topicEventsHeadingLabel: UILabel!
     @IBOutlet weak var topicEventsLabel: UILabel!
     
-    @IBAction func tapTopicResourcesLinkButton(_ sender: UIButton) {
-        print("Hello")
-    }
-    
     var passedInTopic: String?
     let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["http://www.apple.com"], people: ["Beth","Kelsey","Dylan","Priya","Chris","Paul","Devon"], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: []), EventModel(name: "AWS", date: Date(), location: "NMW Apex 1", description: "Learn AWS from ECS experts on the topic", links: [])])
     
