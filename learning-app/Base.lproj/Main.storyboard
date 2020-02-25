@@ -68,17 +68,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple_gray_logo" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-gc-8EX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-gc-8EX">
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn AWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scU-70-THj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scU-70-THj">
                                 <rect key="frame" x="126" y="273" width="163" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4x-uV-lhX">
+                                <rect key="frame" x="46" y="770" width="22" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <state key="normal" title="Button" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="onLeftButtonClick:" destination="vbx-Kp-1U9" eventType="touchUpInside" id="MYk-V8-65M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHR-d6-JV1">
+                                <rect key="frame" x="321" y="777" width="31" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button" image="arrowshape.turn.up.right" catalog="system"/>
+                                <connections>
+                                    <action selector="onRightButtonClick:" destination="vbx-Kp-1U9" eventType="touchUpInside" id="wbo-Ig-eDa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -86,6 +106,8 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ZiF-eu-pJy" appends="YES" id="q0v-Et-UvD"/>
                             <outletCollection property="gestureRecognizers" destination="ZiF-eu-pJy" appends="YES" id="UZj-M8-6Va"/>
+                            <outletCollection property="gestureRecognizers" destination="yao-5F-hdb" appends="YES" id="BaB-hH-cuD"/>
+                            <outletCollection property="gestureRecognizers" destination="xMr-8m-QOz" appends="YES" id="2uk-dh-rtH"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Swipe Page" id="Sqf-cZ-AN7"/>
@@ -96,7 +118,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgw-9K-tLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="ZiF-eu-pJy"/>
+                <swipeGestureRecognizer direction="up" id="ZiF-eu-pJy">
+                    <connections>
+                        <action selector="onSwipeUpAction:" destination="vbx-Kp-1U9" id="BjN-Hc-0wi"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="yao-5F-hdb" userLabel="Swipe Right Gesture Recognizer">
+                    <connections>
+                        <action selector="onSwipeRightAction:" destination="vbx-Kp-1U9" id="kYf-4q-niJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="xMr-8m-QOz" userLabel="Swipe Left Gesture Recognizer">
+                    <connections>
+                        <action selector="onSwipeLeftAction:" destination="vbx-Kp-1U9" id="j23-Qx-MGG"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1521.7391304347827" y="97.767857142857139"/>
         </scene>
@@ -327,5 +363,7 @@
     <resources>
         <image name="Apple_gray_logo" width="2000" height="2000"/>
         <image name="homer-simpson" width="112" height="168"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>
