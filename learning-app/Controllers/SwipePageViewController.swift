@@ -13,7 +13,10 @@ class SwipePageViewController: UIViewController {
     @IBOutlet weak var topicLabelField: UILabel!
     @IBOutlet weak var topicImageView: UIImageView!
     @IBOutlet var swipeUpGestureRecognizer: UISwipeGestureRecognizer!
-
+    
+   
+    let alertDuration: Double = 1.5
+    
     var topicIndex: Int = 0;
     
     var exampleUser = UserModel(email: "homer@gmail.com", name: "Homer Simpson", picture: "homer-simpson", goal: "Goal: Learn iOS by participating in a hackathon", likedTopics: [])
@@ -32,6 +35,7 @@ class SwipePageViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.topicLabelField.text = allTopics[topicIndex].name
         self.topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
+        self.navigationItem.title = "Glider"
     }
     
     //MARK: Actions
@@ -47,7 +51,7 @@ class SwipePageViewController: UIViewController {
         exampleUser.likedTopics.append(allTopics[topicIndex].name)
         print(exampleUser.likedTopics.count)
 
-        nextTopic()
+        nextTopic(wasLiked: true)
     }
     
     @IBAction func onLeftButtonClick(_ sender: UIButton) {
@@ -58,16 +62,36 @@ class SwipePageViewController: UIViewController {
         exampleUser.likedTopics.append(allTopics[topicIndex].name)
         print(exampleUser.likedTopics.count)
 
-        nextTopic()
+        nextTopic(wasLiked: true)
         
     }
     
-    public func nextTopic() {
+    public func nextTopic(wasLiked: Bool = false) {
+        
+        let animationStyle = UIView.AnimationOptions.transitionFlipFromLeft
+        
+        if (wasLiked) {
+            let title = "Added!"
+            let alertMessage = "Successfully added \(allTopics[topicIndex].name) to your learning journey"
+            let alert = UIAlertController(title:title, message: alertMessage, preferredStyle: .alert)
+            self.present(alert, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + alertDuration) {
+                  alert.dismiss(animated: true)
+            }
+        }
+      
+        
+        
         repeat {
             topicIndex = (topicIndex + 1) % allTopics.count
             if (!exampleUser.likedTopics.contains(allTopics[topicIndex].name)) {
                 topicLabelField.text = allTopics[topicIndex].name
-                topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
+//                topicImageView.image = UIImage(named: allTopics[topicIndex].picture)
+                UIView.transition(with: topicImageView,
+                 duration: 0.75,
+                 options: animationStyle,
+                 animations: { self.topicImageView.image = UIImage(named: self.allTopics[self.topicIndex].picture ) },
+                 completion: nil)
                 break;
             }
         } while (exampleUser.likedTopics.count < allTopics.count)
@@ -75,8 +99,17 @@ class SwipePageViewController: UIViewController {
         if (exampleUser.likedTopics.count == allTopics.count)
         {
             topicLabelField.text = defaultTopic.name
-            topicImageView.image = UIImage(named: defaultTopic.picture)
+//            topicImageView.image = UIImage(named: defaultTopic.picture)
+            UIView.transition(with: topicImageView,
+             duration: 0.75,
+             options: animationStyle,
+             animations: { self.topicImageView.image = UIImage(named: self.defaultTopic.picture) },
+             completion: nil)
         }
+        
+ 
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
