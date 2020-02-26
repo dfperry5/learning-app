@@ -10,44 +10,44 @@
         <!--Swipe Page-->
         <scene sceneID="NDA-UA-4LK">
             <objects>
-                <viewController title="Swipe Page" id="vbx-Kp-1U9" customClass="SwipePageViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vbx-Kp-1U9" customClass="SwipePageViewController" customModule="learning_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D2X-oo-xrI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-gc-8EX">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <rect key="frame" x="87" y="321" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4x-uV-lhX">
-                                <rect key="frame" x="46" y="770" width="22" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                </accessibility>
-                                <state key="normal" title="Button" image="trash" catalog="system"/>
-                                <connections>
-                                    <action selector="onLeftButtonClick:" destination="vbx-Kp-1U9" eventType="touchUpInside" id="MYk-V8-65M"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHR-d6-JV1">
-                                <rect key="frame" x="321" y="777" width="31" height="29"/>
+                                <rect key="frame" x="324" y="777" width="31" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Button" image="arrowshape.turn.up.right" catalog="system"/>
+                                <state key="normal" image="heart.fill" catalog="system"/>
                                 <connections>
                                     <action selector="onRightButtonClick:" destination="vbx-Kp-1U9" eventType="touchUpInside" id="wbo-Ig-eDa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scU-70-THj">
-                                <rect key="frame" x="126" y="308" width="163" height="68"/>
+                                <rect key="frame" x="126" y="469" width="163" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.16526538130000001" green="0.1757510602" blue="0.21176970010000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4x-uV-lhX">
+                                <rect key="frame" x="71" y="770" width="25" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <state key="normal" image="clear.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="onLeftButtonClick:" destination="vbx-Kp-1U9" eventType="touchUpInside" id="MYk-V8-65M"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.84863013030000001" green="0.90433627370000003" blue="0.98432618380000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="0SK-kT-WNb"/>
                         <connections>
@@ -58,6 +58,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Swipe Page" id="Sqf-cZ-AN7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GlT-Oy-pGD"/>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="2Yf-SK-czE">
                             <connections>
                                 <action selector="profileButtonPressed:" destination="vbx-Kp-1U9" id="L21-o9-qtg"/>
@@ -150,16 +151,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="-1" estimatedRowHeight="10" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K2c-Hr-OaJ">
-                                <rect key="frame" x="87" y="520" width="240" height="247"/>
+                                <rect key="frame" x="0.0" y="503" width="414" height="373"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81568627449999997" green="0.88235294119999996" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.30196078431372547" green="0.39215686274509803" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="68" id="ksB-aI-qtP">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="68"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ksB-aI-qtP" id="NYC-Ov-hKl">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.81176470590000005" green="0.88235294119999996" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
@@ -177,7 +178,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EE8-bT-fvn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tcy-5o-4Gi">
+                    <navigationItem key="navigationItem" title="User Profile" id="tcy-5o-4Gi">
                         <barButtonItem key="backBarButtonItem" title="Back" id="jtz-wF-qaW"/>
                     </navigationItem>
                     <connections>
@@ -331,9 +332,9 @@
     </scenes>
     <resources>
         <image name="Apple_gray_logo" width="2000" height="2000"/>
-        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="homer-simpson" width="112" height="168"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <color key="tintColor" red="0.1176470588" green="0.1215686275" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

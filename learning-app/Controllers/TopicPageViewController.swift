@@ -27,14 +27,15 @@ class TopicPageViewController: UIViewController {
     @IBOutlet weak var topicEventsLabel: UILabel!
     
     var passedInTopic: String?
-    let sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["http://www.apple.com"], people: ["Beth","Kelsey","Dylan","Priya","Chris","Paul","Devon"], events: [EventModel(name: "iOS Training Camp", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: []), EventModel(name: "AWS", date: Date(), location: "NMW Apex 1", description: "Learn AWS from ECS experts on the topic", links: [])])
+    var sampleTopic = TopicModel(name: "iOS Developement", picture: "Apple_gray_logo", description: "For those interested in learning more about making an iOS app for iPhones! This is the best topic, you should learn this for sure", links: ["http://www.apple.com"], people: ["Beth","Kelsey","Dylan","Priya","Chris","Paul","Devon"], events: [EventModel(name: "HaxBDex Hackathon", date: Date(), location: "NMW Apex 1", description: "Come learn iOS during a hackathon with the best team ever!", links: []), EventModel(name: "AWS", date: Date(), location: "MMK Innovation Space", description: "Learn AWS from ECS experts on the topic", links: [])])
     
     let allTopics: [TopicModel] = [
-        TopicModel(name: "iOS", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"], people: ["Yooo"], events: []),
-        TopicModel(name: "AWS", picture: "aws_logo", description: "Learn all about AWS in this education module, offered through Amazon.", links: ["https://aws.amazon.com/training/"], people: ["Ma"], events: []),
-        TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Ta"], events: []),
-         TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: ["la"], events: [])
+        TopicModel(name: "iOS Development", picture: "Apple_gray_logo", description: "Learn about iOS Development using the Swift programming language in this module.", links: ["https://developer.apple.com/"], people: ["Beth","Kelsey","Dylan","Priya","Chris","Paul","Devon"], events: [EventModel(name: "HaxBDex Hackathon", date: Date(), location: "NMW Apex 1", description: "Come learn iOS during a hackathon with the best team ever!", links: []), EventModel(name: "AWS", date: Date(), location: "MMK Innovation Space", description: "Learn AWS from ECS experts on the topic", links: [])]),
+        TopicModel(name: "AWS", picture: "aws_logo", description: "Learn all about AWS in this education module, offered through Amazon.", links: ["https://aws.amazon.com/training/"], people: ["Dylan"], events: [EventModel(name: "Lambda Overview", date: Date(), location: "MMK Innovation Garage", description: "Come learn iOS with the best team ever!", links: [])]),
+        TopicModel(name: "Docker", picture: "docker_whale", description: "Learn about Docker containerization in this amazing educational session.", links: ["https://docs.docker.com/get-started/"], people: ["Beth"], events: []),
+         TopicModel(name: "Android", picture: "android-image", description: "Learn about android App development using the Kotlin programming language in this amazing educational session.", links: ["https://docs.android.com/get-started/"], people: [], events: [])
     ];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,14 +46,17 @@ class TopicPageViewController: UIViewController {
 //            topicDescriptionLabel.text = sampleTopic.description
             for (i, element) in allTopics.enumerated() {
                 if (allTopics[i].name == topic) {
-                    topicNameLabel.text = allTopics[i].name
-                    topicImageView.image = UIImage(named: allTopics[i].picture)
-                    topicDescriptionLabel.text = allTopics[i].description
+                    sampleTopic = allTopics[i]
                 }
             }
         }
         
         print(passedInTopic)
+        
+        // HEADING
+        topicNameLabel.text = sampleTopic.name
+        topicImageView.image = UIImage(named: sampleTopic.picture)
+        topicDescriptionLabel.text = sampleTopic.description
         
         // RESOURCES
         topicResourcesLinksButton.setTitle(sampleTopic.links[0], for: .normal)
@@ -87,12 +91,17 @@ class TopicPageViewController: UIViewController {
         let events = sampleTopic.events
         var allEvents = String()
         for event in events {
-            let eventString = event.name + " on 2/25/2020 in " + event.location + ": " + event.description + "\n\n"
+            let eventString = event.name + " on 2/26/2020 in " + event.location + ": " + event.description + "\n\n"
             allEvents = allEvents + eventString
         }
         
-        topicEventsLabel.text = allEvents
-        topicEventsLabel.sizeToFit()
+        if(events.count == 0) {
+            topicEventsLabel.text = "No events scheduled"
+            topicEventsLabel.sizeToFit()
+        } else {
+            topicEventsLabel.text = allEvents
+            topicEventsLabel.sizeToFit()
+        }
         
     }
     
